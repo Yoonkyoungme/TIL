@@ -1,48 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
+import Lists from "./components/Lists";
 
 export default function App() {
   const [todoData, setTodoData] = useState([]);
   const [value, setValue] = useState("");
 
-  const btnStyle = {
-    color: "#fff",
-    border: "none",
-    padding: "5px 9px",
-    borderRadius: "50%",
-    cursor: "pointer",
-    float: "right",
-  };
-
-  const listStyle = (completed) => {
-    return {
-      padding: "10px",
-      borderBottom: "1px dotted #ccc",
-      textDecoration: completed ? "line-through" : "none",
-    };
-  };
-
-  const handleClick = (id) => {
-    let newTodoData = todoData.filter((data) => data.id !== id);
-    console.log("newTodoData", newTodoData);
-    setTodoData(newTodoData);
-  };
-
   const handleChange = (e) => {
     console.log("e", e.target.value);
     setValue(e.target.value);
-  };
-
-  const handleCompleChange = (id) => {
-    let newTodoData = todoData.map((data) => {
-      if (data.id === id) {
-        data.completed = !data.completed;
-      }
-      return data;
-    });
-
-    setTodoData(newTodoData);
-    console.log(todoData);
   };
 
   const handleSubmit = (e) => {
@@ -66,22 +32,7 @@ export default function App() {
         <div className="title">
           <h1>할 일 목록</h1>
         </div>
-        {todoData.map((data) => (
-          <div style={listStyle(data.completed)} key={data.id}>
-            <p>
-              <input
-                type="checkbox"
-                onChange={() => handleCompleChange(data.id)}
-                defaultChecked={false}
-              />
-              {data.title}
-              <button style={btnStyle} onClick={() => handleClick(data.id)}>
-                x
-              </button>
-            </p>
-          </div>
-        ))}
-
+        <Lists todoData={todoData} setTodoData={setTodoData} />
         <form style={{ display: "flex" }} onSubmit={handleSubmit}>
           <input
             type="text"
