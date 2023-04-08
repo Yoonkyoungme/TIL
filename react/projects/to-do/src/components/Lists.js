@@ -1,23 +1,6 @@
 import React from "react";
 
 export default function Lists({ todoData, setTodoData }) {
-  const btnStyle = {
-    color: "#fff",
-    border: "none",
-    padding: "5px 9px",
-    borderRadius: "50%",
-    cursor: "pointer",
-    float: "right",
-  };
-
-  const listStyle = (completed) => {
-    return {
-      padding: "10px",
-      borderBottom: "1px dotted #ccc",
-      textDecoration: completed ? "line-through" : "none",
-    };
-  };
-
   const handleCompleChange = (id) => {
     let newTodoData = todoData.map((data) => {
       if (data.id === id) {
@@ -39,18 +22,28 @@ export default function Lists({ todoData, setTodoData }) {
   return (
     <div>
       {todoData.map((data) => (
-        <div style={listStyle(data.completed)} key={data.id}>
-          <p>
-            <input
-              type="checkbox"
-              onChange={() => handleCompleChange(data.id)}
-              defaultChecked={false}
-            />
-            {data.title}
-            <button style={btnStyle} onClick={() => handleClick(data.id)}>
-              x
-            </button>
-          </p>
+        <div key={data.id}>
+          <div className="flex items-center justify-between w-full px-4 py-1 my-2 text-gary-600 bg-gray-100 border rounded">
+            <div className="items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                onChange={() => handleCompleChange(data.id)}
+                defaultChecked={false}
+              />
+              <sapn className={data.completed ? "line-through" : undefined}>
+                {data.title}
+              </sapn>
+            </div>
+            <div className="items-center">
+              <button
+                className="px-4 py-2 float-right  "
+                onClick={() => handleClick(data.id)}
+              >
+                x
+              </button>
+            </div>
+          </div>
         </div>
       ))}
     </div>
