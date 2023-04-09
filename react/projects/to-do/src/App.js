@@ -3,8 +3,12 @@ import "./App.css";
 import Lists from "./components/Lists";
 import Form from "./components/Form";
 
+const initailTodoData = localStorage.getItem("todoData")
+  ? JSON.parse(localStorage.getItem("todoData"))
+  : [];
+
 export default function App() {
-  const [todoData, setTodoData] = useState([]);
+  const [todoData, setTodoData] = useState(initailTodoData);
   const [value, setValue] = useState("");
 
   const handleClick = useCallback(
@@ -12,12 +16,14 @@ export default function App() {
       let newTodoData = todoData.filter((data) => data.id !== id);
       console.log("newTodoData", newTodoData);
       setTodoData(newTodoData);
+      localStorage.setItem("todoData", JSON.stringify(newTodoData));
     },
     [todoData]
   );
 
   const handleRemoveClick = () => {
     setTodoData([]);
+    localStorage.setItem("todoData", JSON.stringify([]));
   };
 
   const handleSubmit = (e) => {
@@ -32,6 +38,9 @@ export default function App() {
 
     // 원래 있던 할 일에 새로운 할 일 더해주기
     setTodoData((prev) => [...prev, newTodo]);
+    localStorage.setItem("todoData", JSON.stringify([...todoData, newTodo]));
+
+    // 입력란에 있던 글씨 지워주기
     setValue("");
   };
 
