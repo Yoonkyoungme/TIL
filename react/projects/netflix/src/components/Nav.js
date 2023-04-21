@@ -3,6 +3,7 @@ import "./Nav.css";
 
 export default function Nav() {
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
