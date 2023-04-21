@@ -82,7 +82,7 @@ getFruites(); // 결과 : apple and banana
 
 <br>
 
-### **3) 에러 핸들링**
+## **3) 에러 핸들링**
 
 ### **1. try-catch 블록 사용**
 
@@ -114,7 +114,7 @@ f();
 
 <br>
 
-### **Promise의 catch() 메소드 사용**
+### **2. Promise의 catch() 메소드 사용**
 
 try..catch가 없으면 아래 예시의 async 함수 f()를 호출해 만든 프라미스가 거부 상태가 된다. f()에 .catch를 추가하면 거부된 프라미스를 처리할 수 있다.
 
