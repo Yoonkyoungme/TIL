@@ -19,9 +19,16 @@ export default function Row({ title, fetchUrl, isLargeRow, id }) {
       <h2>{title}</h2>
       <div className="slider">
         <div className="slider__arrow-left">
-          <span className="arrow">{"<"}</span>
+          <span
+            className="arrow"
+            onClick={() => {
+              document.getElementById(id).scrollLeft -= window.innerWidth - 80;
+            }}
+          >
+            {"<"}
+          </span>
         </div>
-        <div className="row__posters" id={id}>
+        <div id={id} className="row__posters">
           {movies.map((movie) => (
             <img
               key={movie.id}
@@ -34,7 +41,14 @@ export default function Row({ title, fetchUrl, isLargeRow, id }) {
           ))}
         </div>
         <div className="slider__arrow-right">
-          <span className="arrow">{">"}</span>
+          <span
+            className="arrow"
+            onClick={() => {
+              document.getElementById(id).scrollLeft += window.innerWidth - 80;
+            }}
+          >
+            {">"}
+          </span>
         </div>
       </div>
     </section>
