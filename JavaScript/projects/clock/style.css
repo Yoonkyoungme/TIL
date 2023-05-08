@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-size: 32px;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  min-width: 360px;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 18px;
+}
+
+.time {
+  margin-top: 10px;
+}
