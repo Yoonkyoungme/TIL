@@ -22,6 +22,10 @@ body {
   border-radius: 18px;
 }
 
+.today {
+  margin-bottom: 10px;
+}
+
 .time {
   margin-top: 10px;
 }
