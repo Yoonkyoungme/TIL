@@ -1,9 +1,24 @@
 ## Today I Learned
 하루동안 학습한 내용이나 개발관련 경험들을 기록으로 남긴다.
+<br>
+
+### :sparkles: JavaScript
+- :memo: study
+  - [자바스크립트의 기본적인 사용](https://github.com/Yoonkyoungme/TIL/blob/main/JavaScript/javascript-basics.md)
+  - [자료형과 연산자](https://github.com/Yoonkyoungme/TIL/blob/main/JavaScript/data-types-and-operators.md)
+  - [callback](https://github.com/Yoonkyoungme/TIL/blob/main/JavaScript/callback.md)
+  - [promise](https://github.com/Yoonkyoungme/TIL/blob/main/JavaScript/promise.md)
+  - [async와 await](https://github.com/Yoonkyoungme/TIL/blob/main/JavaScript/async-and-await.md)
+
+### :sparkles: React
+  - :computer: project
+    - [To Do List](https://github.com/Yoonkyoungme/TIL/tree/main/react/projects/to-do)
+    - [넷플릭스 클론 코딩](https://github.com/Yoonkyoungme/TIL/tree/main/react/projects/netflix)
 
 <br>
 
-## Git Commit Convention
+### :bulb: Git Commit Convention
+
 - feat: 새로운 기능을 추가할 경우
 - fix: 버그를 고친 경우
 - design: CSS 등 사용자 UI 디자인 변경
